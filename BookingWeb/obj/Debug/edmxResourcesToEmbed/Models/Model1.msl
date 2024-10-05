@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BookingModelStoreContainer" CdmEntityContainer="BookingEntities">
+    <EntitySetMapping Name="DiaDiems">
+      <EntityTypeMapping TypeName="BookingModel.DiaDiem">
+        <MappingFragment StoreEntitySet="DiaDiem">
+          <ScalarProperty Name="MaDiaDiem" ColumnName="MaDiaDiem" />
+          <ScalarProperty Name="TenThanhPho" ColumnName="TenThanhPho" />
+          <ScalarProperty Name="MaKhachSan" ColumnName="MaKhachSan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonThanhToans">
+      <EntityTypeMapping TypeName="BookingModel.DonThanhToan">
+        <MappingFragment StoreEntitySet="DonThanhToan">
+          <ScalarProperty Name="MaDonThanhToan" ColumnName="MaDonThanhToan" />
+          <ScalarProperty Name="PhuongThucThanhToan" ColumnName="PhuongThucThanhToan" />
+          <ScalarProperty Name="NgayThucHienThanhToan" ColumnName="NgayThucHienThanhToan" />
+          <ScalarProperty Name="SoTienThanhToan" ColumnName="SoTienThanhToan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhachSans">
+      <EntityTypeMapping TypeName="BookingModel.KhachSan">
+        <MappingFragment StoreEntitySet="KhachSan">
+          <ScalarProperty Name="IdKhachSan" ColumnName="IdKhachSan" />
+          <ScalarProperty Name="TenKhachSan" ColumnName="TenKhachSan" />
+          <ScalarProperty Name="DiaChiKhachSan" ColumnName="DiaChiKhachSan" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="MaNguoiDung" ColumnName="MaNguoiDung" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NguoiDungs">
+      <EntityTypeMapping TypeName="BookingModel.NguoiDung">
+        <MappingFragment StoreEntitySet="NguoiDung">
+          <ScalarProperty Name="MaNguoiDung" ColumnName="MaNguoiDung" />
+          <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+          <ScalarProperty Name="HoTenNguoiDung" ColumnName="HoTenNguoiDung" />
+          <ScalarProperty Name="DiaChiNguoiDung" ColumnName="DiaChiNguoiDung" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phongs">
+      <EntityTypeMapping TypeName="BookingModel.Phong">
+        <MappingFragment StoreEntitySet="Phong">
+          <ScalarProperty Name="MaPhong" ColumnName="MaPhong" />
+          <ScalarProperty Name="LoaiPhong" ColumnName="LoaiPhong" />
+          <ScalarProperty Name="GiaPhong" ColumnName="GiaPhong" />
+          <ScalarProperty Name="TinhTrangPhong" ColumnName="TinhTrangPhong" />
+          <ScalarProperty Name="SoLuongKhach" ColumnName="SoLuongKhach" />
+          <ScalarProperty Name="MoTaChiTietPhong" ColumnName="MoTaChiTietPhong" />
+          <ScalarProperty Name="Anh" ColumnName="Anh" />
+          <ScalarProperty Name="MaDonThanhToan" ColumnName="MaDonThanhToan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhuongTienDiChuyens">
+      <EntityTypeMapping TypeName="BookingModel.PhuongTienDiChuyen">
+        <MappingFragment StoreEntitySet="PhuongTienDiChuyen">
+          <ScalarProperty Name="MaPhuongTienDiChuyen" ColumnName="MaPhuongTienDiChuyen" />
+          <ScalarProperty Name="LoaiPhuongTien" ColumnName="LoaiPhuongTien" />
+          <ScalarProperty Name="ThoiGianKhoiHanh" ColumnName="ThoiGianKhoiHanh" />
+          <ScalarProperty Name="ThoiGianDen" ColumnName="ThoiGianDen" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="SoChoNgoiConTrong" ColumnName="SoChoNgoiConTrong" />
+          <ScalarProperty Name="TongSoChoNgoi" ColumnName="TongSoChoNgoi" />
+          <ScalarProperty Name="MoTaChiTiet" ColumnName="MoTaChiTiet" />
+          <ScalarProperty Name="MaNguoiDung" ColumnName="MaNguoiDung" />
+          <ScalarProperty Name="MaDonThanhToan" ColumnName="MaDonThanhToan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="BookingModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TienNghiKhachSans">
+      <EntityTypeMapping TypeName="BookingModel.TienNghiKhachSan">
+        <MappingFragment StoreEntitySet="TienNghiKhachSan">
+          <ScalarProperty Name="MaTienNghiKhachSan" ColumnName="MaTienNghiKhachSan" />
+          <ScalarProperty Name="TenTienNghiKhachSan" ColumnName="TenTienNghiKhachSan" />
+          <ScalarProperty Name="MaNguoiDung" ColumnName="MaNguoiDung" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="SuDung" TypeName="BookingModel.SuDung" StoreEntitySet="SuDung">
+      <EndProperty Name="NguoiDung">
+        <ScalarProperty Name="MaNguoiDung" ColumnName="MaNguoiDung" />
+      </EndProperty>
+      <EndProperty Name="TienNghiKhachSan">
+        <ScalarProperty Name="MaTienNghiKhachSan" ColumnName="MaTienNghiKhachSan" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
