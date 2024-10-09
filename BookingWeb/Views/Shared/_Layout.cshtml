@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿Bạn đã gửi
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,10 +18,9 @@
     <div class="container">
         <!-- Logo -->
         <div class="logo">
-            <a href="#"><img src="~/Content/Image/images.png" alt="Booking Logo"></a>
+            <a href="#"><img src="~/Content/Image/Booking.Com-logo.png" alt="Booking Logo"></a>
         </div>
-
-        <!-- Navigation Links -->
+        <!-- Navigation Link -->
         <nav class="nav">
             <ul>
                 <li><a href="#">Máy bay + Khách sạn </a></li>
@@ -30,7 +30,7 @@
                 <li><a href="#">Phiếu giảm giá và ưu đãi</a></li>
             </ul>
         </nav>
-      
+
         <!-- Search Bar -->
         <div class="search-bar">
             <input type="text" placeholder="Nhập điểm du lịch và tên khách sạn">
@@ -41,15 +41,48 @@
         <div class="user-options">
             <a href="#" class="login">Login</a>
             <a href="#" class="signup">Sign Up</a>
-            <a href="#" class="language"><img src="flag.png" alt="Language"></a>
         </div>
     </div>
 
-    @RenderBody();
+     @RenderBody();
 
 
-    @*    @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)*@
+     <@*    @Scripts.Render("~/bundles/jquery")
+         @Scripts.Render("~/bundles/bootstrap")
+         @RenderSection("scripts", required: false)*@
 </body>
+<footer>
+    <div class="footer-container">
+        <div class="footer-links">
+            <div class="footer-section">
+                <h4>Về Agoda</h4>
+                <ul>
+                    <li><a href="#">Giới thiệu Agoda</a></li>
+                    <li><a href="#">Nghề nghiệp</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Hỗ trợ khách hàng</h4>
+                <ul>
+                    <li><a href="#">Trung tâm trợ giúp</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                    <li><a href="#">Câu hỏi thường gặp</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Kết nối với chúng tôi</h4>
+                <ul class="social-icons">
+                    <li><a href="#"><img src="facebook-icon.png" alt="Facebook"></a></li>
+                    <li><a href="#"><img src="twitter-icon.png" alt="Twitter"></a></li>
+                    <li><a href="#"><img src="instagram-icon.png" alt="Instagram"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Agoda. Bảo lưu mọi quyền.</p>
+        </div>
+    </div>
+</footer>
+
 </html>
