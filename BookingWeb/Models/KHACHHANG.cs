@@ -12,32 +12,31 @@ namespace BookingWeb.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class NguoiDung
+    public partial class KHACHHANG
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public NguoiDung()
+        public KHACHHANG()
         {
             this.KhachSans = new HashSet<KhachSan>();
             this.PhuongTienDiChuyens = new HashSet<PhuongTienDiChuyen>();
             this.TienNghiKhachSans = new HashSet<TienNghiKhachSan>();
-            this.TienNghiKhachSans1 = new HashSet<TienNghiKhachSan>();
         }
     
-        public int MaNguoiDung { get; set; }
-        public string TenDangNhap { get; set; }
-        public string MatKhau { get; set; }
+        public int MaKH { get; set; }
+        public string Ten { get; set; }
         public string Email { get; set; }
+        public string MatKhau { get; set; }
         public string SoDienThoai { get; set; }
-        public string HoTenNguoiDung { get; set; }
-        public string DiaChiNguoiDung { get; set; }
+        public string DiaChi { get; set; }
+        public Nullable<System.DateTime> NgayTao { get; set; }
+        public Nullable<bool> TrangThai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KhachSan> KhachSans { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhuongTienDiChuyen> PhuongTienDiChuyens { get; set; }
+        public virtual SuDung SuDung { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TienNghiKhachSan> TienNghiKhachSans { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TienNghiKhachSan> TienNghiKhachSans1 { get; set; }
     }
 }

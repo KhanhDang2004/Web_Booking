@@ -17,15 +17,15 @@ namespace BookingWeb.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TienNghiKhachSan()
         {
-            this.NguoiDungs = new HashSet<NguoiDung>();
+            this.SuDungs = new HashSet<SuDung>();
         }
     
         public int MaTienNghiKhachSan { get; set; }
         public string TenTienNghiKhachSan { get; set; }
-        public int MaNguoiDung { get; set; }
+        public int MaKhachHang { get; set; }
     
-        public virtual NguoiDung NguoiDung { get; set; }
+        public virtual KHACHHANG KHACHHANG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NguoiDung> NguoiDungs { get; set; }
+        public virtual ICollection<SuDung> SuDungs { get; set; }
     }
 }

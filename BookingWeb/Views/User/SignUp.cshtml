@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="col-lg-6 col-md-8 col-sm-10">
+        <div class="card shadow-lg rounded-lg p-4">
+            <h3 class="text-center  mb-4" style="color: #6c757d" >Đăng ký tài khoản</h3>
+            @using (Html.BeginForm("SignUp", "User"))
+            {
+                <div class="form-group">
+                    <span class="text-danger">@ViewBag.ThongBaoEmail</span>
+                </div>
+                <div class="form-group">
+                    <label for="nameGuest">Tên của bạn</label>
+                    <input type="text" name="Ten" class="form-control rounded-pill" placeholder="Tên của bạn">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" name="Email" class="form-control rounded-pill" placeholder="Nhập địa chỉ email của bạn">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Địa chỉ</label>
+                    <input type="text" name="DiaChi" class="form-control rounded-pill" placeholder="Nhập địa chỉ của bạn">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Số điện thoại</label>
+                    <input type="number" name="SoDienThoai" class="form-control rounded-pill" placeholder="Nhập số điện thoại của bạn">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Mật khẩu</label>
+                    <input type="password" name="MatKhau" class="form-control rounded-pill" placeholder="Mật khẩu đăng nhập">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Xác nhận lại mật khẩu</label>
+                    <input type="password" name="rePass" class="form-control rounded-pill" placeholder="Xác nhận lại mật khẩu">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block rounded-pill">Đăng ký</button>
+            }
+            <div class="mt-3 text-center">
+                <span>Đã có tài khoản? @Html.ActionLink("Quay lại đăng nhập", "Login", "User")</span>
+            </div>
+        </div>
+    </div>
+</div>

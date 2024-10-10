@@ -13,10 +13,10 @@ namespace BookingWeb.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BookingEntities : DbContext
+    public partial class BookingEntities1 : DbContext
     {
-        public BookingEntities()
-            : base("name=BookingEntities")
+        public BookingEntities1()
+            : base("name=BookingEntities1")
         {
         }
     
@@ -27,11 +27,11 @@ namespace BookingWeb.Models
     
         public virtual DbSet<DiaDiem> DiaDiems { get; set; }
         public virtual DbSet<DonThanhToan> DonThanhToans { get; set; }
+        public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
         public virtual DbSet<KhachSan> KhachSans { get; set; }
-        public virtual DbSet<NguoiDung> NguoiDungs { get; set; }
         public virtual DbSet<Phong> Phongs { get; set; }
         public virtual DbSet<PhuongTienDiChuyen> PhuongTienDiChuyens { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<SuDung> SuDungs { get; set; }
         public virtual DbSet<TienNghiKhachSan> TienNghiKhachSans { get; set; }
     }
 }

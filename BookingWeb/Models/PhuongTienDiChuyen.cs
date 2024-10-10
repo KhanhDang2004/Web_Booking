@@ -22,10 +22,10 @@ namespace BookingWeb.Models
         public Nullable<int> SoChoNgoiConTrong { get; set; }
         public Nullable<int> TongSoChoNgoi { get; set; }
         public string MoTaChiTiet { get; set; }
-        public Nullable<int> MaNguoiDung { get; set; }
+        public Nullable<int> MaKhachHang { get; set; }
         public Nullable<int> MaDonThanhToan { get; set; }
     
         public virtual DonThanhToan DonThanhToan { get; set; }
-        public virtual NguoiDung NguoiDung { get; set; }
+        public virtual KHACHHANG KHACHHANG { get; set; }
     }
 }

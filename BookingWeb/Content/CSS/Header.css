@@ -1,0 +1,164 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+/*---------------------------Header---------------------------------*/
+
+.top-header {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Đổ bóng nhẹ */
+}
+
+.logo {
+    width: 120px;
+    max-height: 50px;
+}
+
+.search-form input {
+    border-radius: 20px;
+    padding: 5px 15px;
+    width: 300px;
+}
+
+.search-form button {
+    border-radius: 20px;
+}
+
+.cart-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+    .cart-link i {
+        font-size: 1.5rem;
+    }
+
+    .cart-link:hover {
+        text-decoration: underline;
+    }
+
+.user-link-option {
+    color: #343a40;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+    .user-link-option:hover {
+        text-decoration: none;
+        color: #007bff;
+    }
+
+.dropdown-menu a {
+    font-size: 1rem;
+}
+
+    .dropdown-menu a:hover {
+        background-color: #f8f9fa;
+    }
+
+.btn-primary {
+    border-radius: 20px;
+}
+
+.btn-outline-primary {
+    border-radius: 20px;
+}
+
+
+/*----------------Footer-------------------------------------*/
+footer {
+    background-color: #f1f1f1; /* Màu nền nhẹ hơn */
+    padding: 60px 0;
+    color: #444;
+    font-family: 'Arial', sans-serif;
+    border-top: 1px solid #e0e0e0;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1); /* Tạo hiệu ứng đổ bóng nhẹ */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Thêm khoảng cách hai bên */
+}
+
+.footer-section {
+    flex: 1;
+    margin-right: 30px; /* Tăng khoảng cách giữa các phần */
+}
+
+    .footer-section h4 {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #222;
+        font-weight: bold;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+            .footer-section ul li a {
+                text-decoration: none;
+                color: #555;
+                font-size: 15px;
+                transition: color 0.3s, transform 0.3s;
+            }
+
+                .footer-section ul li a:hover {
+                    color: #007bff;
+                    transform: translateX(5px); /* Hiệu ứng dịch chuyển khi hover */
+                }
+
+.social-icons {
+    display: flex;
+    margin-top: 10px;
+}
+
+    .social-icons li {
+        margin-right: 15px;
+    }
+
+        .social-icons li a img {
+            width: 28px;
+            height: 28px;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+            .social-icons li a img:hover {
+                transform: scale(1.2); /* Tăng kích thước khi hover */
+                filter: brightness(1.2); /* Làm sáng hơn */
+            }
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #777;
+}
+
+    .footer-bottom p {
+        margin: 0;
+    }

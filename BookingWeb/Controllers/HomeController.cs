@@ -10,7 +10,7 @@ namespace BookingWeb.Controllers
 {
     public class HomeController : Controller
     {
-        BookingEntities db = new BookingEntities(); 
+        BookingEntities1 db = new BookingEntities1(); 
         public ActionResult Index()
         {
             return View();

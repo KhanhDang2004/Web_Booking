@@ -1,4 +1,7 @@
-﻿Bạn đã gửi
+﻿@{ 
+    var user = Session["TaiKhoan"] as BookingWeb.Models.KHACHHANG;
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,50 +9,184 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookingWeb</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="~/Content/Stylecss.css">
+    <link rel="stylesheet" href="~/Content/CSS/Header.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <!-- Logo -->
-        <div class="logo">
-            <a href="#"><img src="~/Content/Image/Booking.Com-logo.png" alt="Booking Logo"></a>
-        </div>
-        <!-- Navigation Link -->
-        <nav class="nav">
-            <ul>
-                <li><a href="#">Máy bay + Khách sạn </a></li>
-                <li><a href="#">Phương tiện di chuyển</a></li>
-                <li><a href="#">Hoạt động</a></li>
-                <li><a href="#">Các tiện ích của khách sạn </a></li>
-                <li><a href="#">Phiếu giảm giá và ưu đãi</a></li>
-            </ul>
-        </nav>
 
-        <!-- Search Bar -->
-        <div class="search-bar">
-            <input type="text" placeholder="Nhập điểm du lịch và tên khách sạn">
-            <button type="button">Search</button>
-        </div>
+    <div class="top-header py-2 bg-light shadow-sm">
+        <div class="container d-flex justify-content-between align-items-center">
+            <!-- Logo -->
+            <div class="d-flex align-items-center">
+                <a href="@Url.Action("Index", "Home")">
+                    <img src="~/Content/Image/Booking.Com-logo.png" alt="Logo" class="logo" style="width: 120px; margin-right: 20px;">
+                </a>
+            </div>
 
-        <!-- User Options -->
-        <div class="user-options">
-            <a href="#" class="login">Login</a>
-            <a href="#" class="signup">Sign Up</a>
+            <!-- Search bar -->
+            <div class="d-flex align-items-center flex-grow-1">
+                @using (Html.BeginForm("Search", "Category", FormMethod.Post, new { @class = "d-flex search-form" }))
+                {
+                    <input type="text" name="inputString" placeholder="Nhập từ khóa tìm kiếm..." class="form-control">
+                    <button type="submit" class="btn btn-outline-primary ml-2"><i class="bi bi-search"></i></button>
+                }
+            </div>
+
+            <!-- User Options and Cart -->
+            <div class="d-flex align-items-center ml-auto">
+                @if (user == null)
+                {
+                    <!-- Giỏ hàng khi chưa đăng nhập -->
+                    <a href="@Url.Action("Login","User")" class="cart-link d-flex align-items-center mr-3">
+                        <i class="bi bi-cart-fill"></i>
+                        <span class="giohang ml-1">Giỏ hàng</span>
+                    </a>
+
+                    <!-- Đăng nhập và Đăng ký -->
+                    <a href="@Url.Action("Login","User")" class="btn btn-primary btn-sm mx-2">Đăng nhập</a>
+                    <a href="@Url.Action("SignUp","User")" class="btn btn-outline-primary btn-sm">Đăng ký</a>
+                }
+                else
+                {
+                    <!-- Cart Partial Render -->
+                    { Html.RenderAction("CartPartial", "Cart"); }
+
+                    <!-- User Dropdown -->
+                    <div class="dropdown ml-4">
+                        <a class="user-link-option d-flex align-items-center" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="bi bi-person-circle" style="font-size: 1.5rem;"></i>
+                            <span class="ml-2" style="font-size: 1.2rem;">@user.Ten</span>
+                            <i class="bi bi-chevron-down ml-2"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="@Url.Action("Edit", "User")">Thông tin cá nhân</a>
+                            <a class="dropdown-item" href="@Url.Action("Index/"+user.MaKH,"Order")">Đơn hàng của bạn</a>
+                            <a class="dropdown-item" href="@Url.Action("Index","Support")">Hỗ Trợ</a>
+                            <a class="dropdown-item" href="@Url.Action("LogOut", "User")">Đăng xuất</a>
+                        </div>
+                    </div>
+                }
+            </div>
         </div>
     </div>
 
-     @RenderBody();
+
+    <style>
+        /*.logo img {
+                            width: 75px;
+                            margin-right: 20px;
+                        }*/
+        .container {
+            max-width: 1425px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav {
+            background-color: #343a40; /* Dark background color */
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff; /* White text color */
+            font-weight: 500; /* Medium font weight */
+        }
+
+            .navbar-nav .nav-link:hover {
+                color: #f8f9fa; /* Lighter text color on hover */
+                background-color: #495057; /* Darker background on hover */
+                border-radius: 5px; /* Rounded corners */
+            }
+
+        .navbar-brand img {
+            height: 50px; /* Adjust the height of the logo */
+        }
+
+        .nav .container {
+            padding: 0 15px;
+        }
+
+        .nav-list {
+            padding: 10px 0;
+        }
+
+        #navbarNavAltMarkup {
+            margin-right: 50px;
+        }
+    </style>
+    <div class="nav">
+        <div class="container nav-list">
+            <div class="row align-items-center">
+                <!-- Nếu có logo, bạn có thể bỏ dấu comment -->
+                <!-- <div class="col-lg-2 col-4">
+                    <a class="navbar-brand" href="@Url.Action("Index","Home")">
+                        <img src="path/to/your/logo.png" alt="Logo" style="max-width: 100px;">
+                    </a>
+                </div> -->
+                <div class="col-lg-12 col-12">
+                    <nav class="navbar navbar-expand-lg navbar-dark" style="margin-left:300px ">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav ml-auto float-lg-start">
+                                <a class="nav-item nav-link mx-2 nav-link-custom" href="@Url.Action("Index","Home")">Trang chủ</a>
+                                <a class="nav-item nav-link mx-2 nav-link-custom" href="@Url.Action("GetAllBook","Category")">Khách Sạn</a>
+                                <a class="nav-item nav-link mx-2 nav-link-custom" href="@Url.Action("GetAllBook","Category")">Phương tiện di chuyển</a>
+                                <a class="nav-item nav-link mx-2 nav-link-custom" href="@Url.Action("Index","Introduce")">Các tiện ích</a>
+                                <a class="nav-item nav-link mx-2 nav-link-custom" href="@Url.Action("Index", "Contact")">Hoạt động</a>
+                                <a class="nav-item nav-link mx-2 nav-link-custom" href="@Url.Action("Index", "Contact")">Ưu đãi</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-     <@*    @Scripts.Render("~/bundles/jquery")
-         @Scripts.Render("~/bundles/bootstrap")
-         @RenderSection("scripts", required: false)*@
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Search Bar -->
+    <!--<div class="search-bar">
+        <input type="text" placeholder="Nhập điểm du lịch và tên khách sạn">
+        <button type="button">Search</button>
+    </div>-->
+    <!-- User Options -->
+    <!--<div class="col-md-2">
+
+            <ul class="list-unstyled">
+                <li><a href="@Url.Action("Login", "User")" class="text-dark">Đăng nhập</a></li>
+                <li><a href="@Url.Action("SignUp","User")" class="text-dark">Tạo tài khoản</a></li>
+            </ul>
+        </div>
+    </div>-->
+
+    @RenderBody();
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 <footer>
     <div class="footer-container">
@@ -73,9 +210,9 @@
             <div class="footer-section">
                 <h4>Kết nối với chúng tôi</h4>
                 <ul class="social-icons">
-                    <li><a href="#"><img src="facebook-icon.png" alt="Facebook"></a></li>
-                    <li><a href="#"><img src="twitter-icon.png" alt="Twitter"></a></li>
-                    <li><a href="#"><img src="instagram-icon.png" alt="Instagram"></a></li>
+                    <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                    <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                    <li><a href="#"><i class="bi bi-instagram"></i></a></li>
                 </ul>
             </div>
         </div>

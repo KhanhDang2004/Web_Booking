@@ -25,9 +25,10 @@ namespace BookingWeb.Models
         public string DiaChiKhachSan { get; set; }
         public string MoTa { get; set; }
         public int MaNguoiDung { get; set; }
+        public string HinhAnh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DiaDiem> DiaDiems { get; set; }
-        public virtual NguoiDung NguoiDung { get; set; }
+        public virtual KHACHHANG KHACHHANG { get; set; }
     }
 }
