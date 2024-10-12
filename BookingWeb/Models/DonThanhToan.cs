@@ -12,13 +12,13 @@ namespace BookingWeb.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class DonThanhToan
+    public partial class DONTHANHTOAN
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DonThanhToan()
+        public DONTHANHTOAN()
         {
-            this.Phongs = new HashSet<Phong>();
-            this.PhuongTienDiChuyens = new HashSet<PhuongTienDiChuyen>();
+            this.PHONGs = new HashSet<PHONG>();
+            this.PHUONGTIENDICHUYENs = new HashSet<PHUONGTIENDICHUYEN>();
         }
     
         public int MaDonThanhToan { get; set; }
@@ -27,8 +27,8 @@ namespace BookingWeb.Models
         public Nullable<decimal> SoTienThanhToan { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Phong> Phongs { get; set; }
+        public virtual ICollection<PHONG> PHONGs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PhuongTienDiChuyen> PhuongTienDiChuyens { get; set; }
+        public virtual ICollection<PHUONGTIENDICHUYEN> PHUONGTIENDICHUYENs { get; set; }
     }
 }

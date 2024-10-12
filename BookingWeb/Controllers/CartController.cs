@@ -15,19 +15,31 @@ namespace BookingWeb.Controllers
         {
             return View();
         }
-      /*  public ActionResult CartPartial()
+        public ActionResult CartPartial()
         {
             ViewBag.TotalNumber = GetTotalNumber();
 
             return PartialView();
-        }*/
-       /* private int GetTotalNumber()
+        }
+        private int GetTotalNumber()
         {
             int totalNumber = 0;
             List<CartItem> myCart = GetCart();
             if (myCart != null)
                 totalNumber = myCart.Sum(sp => sp.SoLuong);
             return totalNumber;
-        }*/
+        }
+        public List<CartItem> GetCart()
+        {
+            List<CartItem> myCart = Session["GioHang"] as List<CartItem>;
+
+
+            if (myCart == null)
+            {
+                myCart = new List<CartItem>();
+                Session["GioHang"] = myCart;
+            }
+            return myCart;
+        }
     }
 }

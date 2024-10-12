@@ -12,23 +12,26 @@ namespace BookingWeb.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class KhachSan
+    public partial class KHACHSAN
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public KhachSan()
+        public KHACHSAN()
         {
-            this.DiaDiems = new HashSet<DiaDiem>();
+            this.DANHGIAs = new HashSet<DANHGIA>();
+            this.PHONGs = new HashSet<PHONG>();
         }
     
-        public int IdKhachSan { get; set; }
+        public int MaKhachSan { get; set; }
         public string TenKhachSan { get; set; }
         public string DiaChiKhachSan { get; set; }
         public string MoTa { get; set; }
-        public int MaNguoiDung { get; set; }
-        public string HinhAnh { get; set; }
+        public int MaDiaDiem { get; set; }
+        public int MaPhong { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DiaDiem> DiaDiems { get; set; }
-        public virtual KHACHHANG KHACHHANG { get; set; }
+        public virtual ICollection<DANHGIA> DANHGIAs { get; set; }
+        public virtual DIADIEM DIADIEM { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PHONG> PHONGs { get; set; }
     }
 }

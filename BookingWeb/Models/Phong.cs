@@ -12,8 +12,14 @@ namespace BookingWeb.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Phong
+    public partial class PHONG
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public PHONG()
+        {
+            this.KHUYENMAIs = new HashSet<KHUYENMAI>();
+        }
+    
         public int MaPhong { get; set; }
         public string LoaiPhong { get; set; }
         public Nullable<decimal> GiaPhong { get; set; }
@@ -22,7 +28,16 @@ namespace BookingWeb.Models
         public string MoTaChiTietPhong { get; set; }
         public string Anh { get; set; }
         public Nullable<int> MaDonThanhToan { get; set; }
+        public Nullable<int> MaNVTao { get; set; }
+        public Nullable<int> NgayTao { get; set; }
+        public Nullable<int> MaKhachSan { get; set; }
+        public Nullable<int> MaThanhToan { get; set; }
+        public Nullable<int> MaNV { get; set; }
     
-        public virtual DonThanhToan DonThanhToan { get; set; }
+        public virtual DONTHANHTOAN DONTHANHTOAN { get; set; }
+        public virtual KHACHSAN KHACHSAN { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KHUYENMAI> KHUYENMAIs { get; set; }
+        public virtual NHANVIEN NHANVIEN { get; set; }
     }
 }

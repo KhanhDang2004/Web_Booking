@@ -1,4 +1,4 @@
-﻿/*using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -22,12 +22,11 @@ namespace BookingWeb.Models
         public CartItem(int MaKhachSan)
         {
             this.MaSanPham = MaSanPham;
-            var productDB = db.KhachSans.Single(s => s.IdKhachSan == this.MaSanPham);
+            var productDB = db.KHACHSANs.Single(s => s.MaKhachSan == this.MaSanPham);
             this.TenSanPham = productDB.TenKhachSan;
-            this.Anh = productDB.HinhAnh;
-            this.Gia = (decimal)productDB.;
-            this.SoLuong = 1;
+            this.Anh = productDB.MoTa;
+
+            /*this.SoLuong = 1;*/
         }
     }
 }
-}*/

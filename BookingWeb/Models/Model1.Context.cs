@@ -25,13 +25,17 @@ namespace BookingWeb.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<DiaDiem> DiaDiems { get; set; }
-        public virtual DbSet<DonThanhToan> DonThanhToans { get; set; }
+        public virtual DbSet<DANHGIA> DANHGIAs { get; set; }
+        public virtual DbSet<DIADIEM> DIADIEMs { get; set; }
+        public virtual DbSet<DONTHANHTOAN> DONTHANHTOANs { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
-        public virtual DbSet<KhachSan> KhachSans { get; set; }
-        public virtual DbSet<Phong> Phongs { get; set; }
-        public virtual DbSet<PhuongTienDiChuyen> PhuongTienDiChuyens { get; set; }
-        public virtual DbSet<SuDung> SuDungs { get; set; }
-        public virtual DbSet<TienNghiKhachSan> TienNghiKhachSans { get; set; }
+        public virtual DbSet<KHACHSAN> KHACHSANs { get; set; }
+        public virtual DbSet<KHUYENMAI> KHUYENMAIs { get; set; }
+        public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
+        public virtual DbSet<PHONG> PHONGs { get; set; }
+        public virtual DbSet<PHUONGTIENDICHUYEN> PHUONGTIENDICHUYENs { get; set; }
+        public virtual DbSet<SUDUNG> SUDUNGs { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<TIENNGHIKHACHSAN> TIENNGHIKHACHSANs { get; set; }
     }
 }

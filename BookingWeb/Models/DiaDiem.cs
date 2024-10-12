@@ -12,12 +12,19 @@ namespace BookingWeb.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class DiaDiem
+    public partial class DIADIEM
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public DIADIEM()
+        {
+            this.KHACHSANs = new HashSet<KHACHSAN>();
+        }
+    
         public int MaDiaDiem { get; set; }
         public string TenThanhPho { get; set; }
         public int MaKhachSan { get; set; }
     
-        public virtual KhachSan KhachSan { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KHACHSAN> KHACHSANs { get; set; }
     }
 }

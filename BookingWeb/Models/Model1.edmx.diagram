@@ -4,23 +4,32 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ea88630fc2be4fdeb2b98d9a37041af4" Name="Diagram1">
-        <EntityTypeShape EntityType="BookingModel.DiaDiem" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookingModel.DonThanhToan" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookingModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookingModel.KhachSan" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookingModel.Phong" Width="1.5" PointX="3" PointY="18" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookingModel.PhuongTienDiChuyen" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookingModel.SuDung" Width="1.5" PointX="5.25" PointY="10.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookingModel.TienNghiKhachSan" Width="1.5" PointX="3" PointY="14.625" IsExpanded="true" />
-        <AssociationConnector Association="BookingModel.FK__DiaDiem__MaKhach__34C8D9D1" ManuallyRouted="false" />
-        <AssociationConnector Association="BookingModel.FK__Phong__MaDonThan__440B1D61" ManuallyRouted="false" />
-        <AssociationConnector Association="BookingModel.FK__PhuongTie__MaDon__412EB0B6" ManuallyRouted="false" />
-        <AssociationConnector Association="BookingModel.FK__KhachSan__MaNguo__31EC6D26" ManuallyRouted="false" />
-        <AssociationConnector Association="BookingModel.FK__PhuongTie__MaKha__403A8C7D" ManuallyRouted="false" />
-        <AssociationConnector Association="BookingModel.FK__SuDung__MaKhachH__49C3F6B7" ManuallyRouted="false" />
-        <AssociationConnector Association="BookingModel.FK__TienNghiK__MaKha__37A5467C" ManuallyRouted="false" />
-        <AssociationConnector Association="BookingModel.FK__SuDung__MaTienNg__4AB81AF0" ManuallyRouted="false" />
+      <Diagram DiagramId="2ced6a9346da4091a221d580836398a8" Name="Diagram1">
+        <EntityTypeShape EntityType="BookingModel.DANHGIA" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookingModel.DIADIEM" Width="1.5" PointX="6.5" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookingModel.DONTHANHTOAN" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookingModel.KHACHHANG" Width="1.5" PointX="0.5" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookingModel.KHACHSAN" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookingModel.KHUYENMAI" Width="1.5" PointX="8.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookingModel.NHANVIEN" Width="1.5" PointX="3.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookingModel.PHONG" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookingModel.PHUONGTIENDICHUYEN" Width="1.5" PointX="6" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookingModel.SUDUNG" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookingModel.sysdiagram" Width="1.5" PointX="8.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookingModel.TIENNGHIKHACHSAN" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <AssociationConnector Association="BookingModel.FK_DanhGia_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="BookingModel.FK_DanhGia_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="BookingModel.FK_KhachSan_DiaDiem" ManuallyRouted="false" />
+        <AssociationConnector Association="BookingModel.FK_Phong_DonThanhToan" ManuallyRouted="false" />
+        <AssociationConnector Association="BookingModel.FK_PhuongTienDiChuyen_DonThanhToan" ManuallyRouted="false" />
+        <AssociationConnector Association="BookingModel.FK_PhuongTienDiChuyen_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="BookingModel.FK_SuDung_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="BookingModel.FK_Phong_KhachSan" ManuallyRouted="false" />
+        <AssociationConnector Association="BookingModel.FK_KhuyenMai_Phong" ManuallyRouted="false" />
+        <AssociationConnector Association="BookingModel.FK_KhuyenMai_PhuongTienDiChuyen" ManuallyRouted="false" />
+        <AssociationConnector Association="BookingModel.FK_Phong_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="BookingModel.FK_PhuongTienDiChuyen_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="BookingModel.FK_SuDung_TienNghiKhachSan" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

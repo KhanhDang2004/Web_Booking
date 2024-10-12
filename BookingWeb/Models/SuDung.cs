@@ -12,12 +12,12 @@ namespace BookingWeb.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class SuDung
+    public partial class SUDUNG
     {
         public int MaKhachHang { get; set; }
         public Nullable<int> MaTienNghiKhachSan { get; set; }
     
         public virtual KHACHHANG KHACHHANG { get; set; }
-        public virtual TienNghiKhachSan TienNghiKhachSan { get; set; }
+        public virtual TIENNGHIKHACHSAN TIENNGHIKHACHSAN { get; set; }
     }
 }

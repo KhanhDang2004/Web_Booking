@@ -17,9 +17,8 @@ namespace BookingWeb.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KHACHHANG()
         {
-            this.KhachSans = new HashSet<KhachSan>();
-            this.PhuongTienDiChuyens = new HashSet<PhuongTienDiChuyen>();
-            this.TienNghiKhachSans = new HashSet<TienNghiKhachSan>();
+            this.DANHGIAs = new HashSet<DANHGIA>();
+            this.PHUONGTIENDICHUYENs = new HashSet<PHUONGTIENDICHUYEN>();
         }
     
         public int MaKH { get; set; }
@@ -28,15 +27,13 @@ namespace BookingWeb.Models
         public string MatKhau { get; set; }
         public string SoDienThoai { get; set; }
         public string DiaChi { get; set; }
-        public Nullable<System.DateTime> NgayTao { get; set; }
-        public Nullable<bool> TrangThai { get; set; }
+        public System.DateTime NgayTao { get; set; }
+        public bool TrangThai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KhachSan> KhachSans { get; set; }
+        public virtual ICollection<DANHGIA> DANHGIAs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PhuongTienDiChuyen> PhuongTienDiChuyens { get; set; }
-        public virtual SuDung SuDung { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TienNghiKhachSan> TienNghiKhachSans { get; set; }
+        public virtual ICollection<PHUONGTIENDICHUYEN> PHUONGTIENDICHUYENs { get; set; }
+        public virtual SUDUNG SUDUNG { get; set; }
     }
 }
